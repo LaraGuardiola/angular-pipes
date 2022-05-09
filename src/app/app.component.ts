@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component , Inject} from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +6,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'pipes';
+  //for initializing without value you can use pipe and undefined type
+  name: string = ''
+  date: Date | undefined;
+
+  onNameChange(value: string): void{
+    this.name = value;
+  }
+
+  onDateChange(value: Date): void{
+    this.date = value;
+  }
 }
